@@ -18,6 +18,9 @@ public class BST<Key extends Comparable<Key>,Value> {
         }
     } //End Node Class
 
+    /***********************************************************************
+     *  helper methods
+     ***********************************************************************/
     public boolean containsKey(Key key){
         return get(key)!=null;
     }
@@ -37,6 +40,9 @@ public class BST<Key extends Comparable<Key>,Value> {
             return x.N;
     }
 
+    /***********************************************************************
+     *  get
+     ***********************************************************************/
     public Value get(Key key){
         return get(root, key);
     }
@@ -52,6 +58,9 @@ public class BST<Key extends Comparable<Key>,Value> {
             return x.value;
     }
 
+    /***********************************************************************
+     *  put
+     ***********************************************************************/
     public void put(Key key, Value value){
         root = put(root, key, value);
     }
@@ -68,6 +77,7 @@ public class BST<Key extends Comparable<Key>,Value> {
         x.N = 1 + size(x.left) + size(x.right);
         return x;
     }
+
     /***********************************************************************
      *  delMin
      ***********************************************************************/
@@ -82,6 +92,9 @@ public class BST<Key extends Comparable<Key>,Value> {
         return x;
     }
 
+    /***********************************************************************
+     *  main - Test method for the client
+     ***********************************************************************/
     public static void main(String[] args) {
         BST bst = new BST();
         String countries = "Bulgaria, Romania, USA, France";
@@ -101,9 +114,9 @@ public class BST<Key extends Comparable<Key>,Value> {
 
     }
 
+    //Other methods to implement
     //containsKey
     //size
-
     //get
     //add
     //findMin
